@@ -33,3 +33,6 @@ Route::get('/sale-document/{id}', 'SaleDocument\Api\SaleDocumentApiController@ge
 Route::post('/sale-document', 'SaleDocument\Api\SaleDocumentApiController@createObject');
 Route::patch('/sale-document/{id}', 'SaleDocument\Api\SaleDocumentApiController@updateObject');
 Route::delete('/sale-document/{id}', 'SaleDocument\Api\SaleDocumentApiController@deleteObject');
+
+//plugins
+Route::get('/plugins', 'Plugins\Api\PluginsApiController@install');

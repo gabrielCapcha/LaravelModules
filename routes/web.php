@@ -17,5 +17,6 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('dashboard');
 Route::get('/products', 'Product\ProductController@index');
+Route::get('/plugins', 'Plugins\PluginsController@index');
 //sales
 Route::get('/new-sale', 'SaleDocument\SaleDocumentController@index');

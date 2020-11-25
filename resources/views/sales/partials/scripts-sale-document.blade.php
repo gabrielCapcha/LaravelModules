@@ -16,6 +16,7 @@
     $(document).ready(function() {
     var products = [];
     var data = {};
+    var companyData = JSON.parse(document.getElementById('companyData').value);
     data.client = {};
     data.dataClient = {};
     data.products = [];
@@ -37,8 +38,19 @@
                 17 : { "name": "TUNKI", "type": "number", "htmlId": "tunkiInputValue", "selected": false, "additionalBox": false, "readOnly": false, "exchange": false },
                 18 : { "name": "AMERICAN EXPRESS", "type": "number", "htmlId": "americanExpressInputValue", "selected": false, "additionalBox": false, "readOnly": false, "exchange": false },
                 19 : { "name": "PLIM", "type": "number", "htmlId": "plimInputValue", "selected": false, "additionalBox": false, "readOnly": false, "exchange": false },
-            };
+    };
     
+    if (companyData.flag_a4_document == true && companyData.flag_report == true) {
+        document.getElementById("pdfA4").classList.add("col-6");
+        document.getElementById("reportSales").classList.add("col-6");
+    } else {
+        if (companyData.flag_a4_document == true) {
+            document.getElementById("pdfA4").classList.add("col-12");
+        }
+        if (companyData.flag_report == true) {
+            document.getElementById("reportSales").classList.add("col-12");
+        }
+    }
     mapArrayProducts = function(array){
         array.forEach(element => {
             products[element.id] = element;

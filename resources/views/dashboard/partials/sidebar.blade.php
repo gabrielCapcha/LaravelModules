@@ -14,6 +14,7 @@
               <p>Dashboard</p>
             </a>
           </li>
+          @if($jsonResponse->companyObject['flag_report'] == true)
           <li>
             <a class="nav-link">
               <i class="tim-icons icon-book-bookmark"></i>
@@ -36,6 +37,7 @@
               </ul>
             </div>
           </li>
+          @endif
           <li>
             <a href="new-sale">
               <i class="tim-icons icon-cart"></i>
@@ -46,6 +48,12 @@
             <a href="products">
               <i class="tim-icons icon-components"></i>
               <p>Productos</p>
+            </a>
+          </li>
+          <li>
+            <a href="plugins">
+              <i class="tim-icons icon-atom"></i>
+              <p>PLUGINS</p>
             </a>
           </li>
         </ul>

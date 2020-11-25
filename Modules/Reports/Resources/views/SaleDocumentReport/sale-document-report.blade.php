@@ -25,101 +25,98 @@
                     $count = 0;
                 @endphp
                 @foreach($jsonResponse->sales as $sale)
-                @php
-                    $count++;
-                    if ($sale->sal_type_document_id == 0) {
-                        $typeDocument = 'PRECUENTA';
-                    } elseif ($sale->sal_type_document_id == 1) {
-                        $typeDocument = 'BOLETA';
-                    } else {
-                        $typeDocument = 'FACTURA';
-                    }
-                  
-                  
-                    if(!is_null($sale->sal_type_document_id)){
-                        switch($sale->sal_type_document_id){
-                            case 1:
-                                $typeDocument = 'EFECTIVO';
-                            break;
-                            case 2:
-                                $typeDocument = 'VISA';
-                            break;
-                            case 3:
-                                $typeDocument = 'MASTERCARD';
-                            break;
-                            case 4:
-                                $typeDocument = 'PAGO A CUOTAS';
-                            break;
-                            case 5:
-                                $typeDocument = 'PAGO MIXTO';
-                            break;
-                            case 6:
-                                $typeDocument = 'DEPOSITO/TRANSFERENCIA';
-                            break;
-                            case 7:
-                                $typeDocument = 'CHEQUE FINANCIERO';
-                            break;
-                            case 8:
-                                $typeDocument = 'CREDITO';
-                            break;
-                            case 9:
-                                $typeDocument = 'LETRA';
-                            break;
-                            case 10:
-                                $typeDocument = 'IZIPAY';
-                            break;
-                            case 11:
-                                $typeDocument = 'OTRO';
-                            break;
-                            case 12:
-                                $typeDocument = 'GLOVO';
-                            break;
-                            case 13:
-                                $typeDocument = 'RAPPI';
-                            break;
-                            case 14:
-                                $typeDocument = 'VENDEMAS';
-                            break;
-                            case 15:
-                                $typeDocument = 'LUKITA';
-                            break;
-                            case 16:
-                                $typeDocument = 'YAPE';
-                            break;
-                            case 17:
-                                $typeDocument = 'TUNKI';
-                            break;
-                            case 18:
-                                $typeDocument = 'AMERICAN EXPRESS';
-                            break;
-                            case 19:
-                                $typeDocument = 'PLIM';
-                            break;
+                    @php
+                        $count++;
+                        if ($sale->sal_type_document_id == 0) {
+                            $typeDocument = 'PRECUENTA';
+                        } elseif ($sale->sal_type_document_id == 1) {
+                            $typeDocument = 'BOLETA';
+                        } else {
+                            $typeDocument = 'FACTURA';
                         }
-                        
-
-                @endphp
-
-                
-                
-                <tr class="text-center">
-                    <td class="text-center">{{ $count }}</td>
-                    <td>{{ $sale->data_client['lastnames'] }}</td>
-                    <td>{{ $typeDocument }}</td>
-                    <td>{{ $sale->ticket }}</td>
-                    <td>S/. {{ $sale->amount }}</td>
-                    <td>S/. {{ $sale->sub_total }}</td>
-                    <td>S/. {{ $sale->taxes }}</td>
-                    <td>S/. {{ $type_payment }}</td>
-                    <td class="td-actions text-center">
-                        <button onClick="editProductModal()" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                            <i class="tim-icons icon-pencil"></i>
-                        </button>
-                        <button onClick="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </td>
-                </tr>
+                        if(!is_null($sale->sal_type_document_id)){
+                            switch($sale->sal_type_document_id){
+                                case 1:
+                                    $typePayment = 'EFECTIVO';
+                                break;
+                                case 2:
+                                    $typePayment = 'VISA';
+                                break;
+                                case 3:
+                                    $typePayment = 'MASTERCARD';
+                                break;
+                                case 4:
+                                    $typePayment = 'PAGO A CUOTAS';
+                                break;
+                                case 5:
+                                    $typePayment = 'PAGO MIXTO';
+                                break;
+                                case 6:
+                                    $typePayment = 'DEPOSITO/TRANSFERENCIA';
+                                break;
+                                case 7:
+                                    $typePayment = 'CHEQUE FINANCIERO';
+                                break;
+                                case 8:
+                                    $typePayment = 'CREDITO';
+                                break;
+                                case 9:
+                                    $typePayment = 'LETRA';
+                                break;
+                                case 10:
+                                    $typePayment = 'IZIPAY';
+                                break;
+                                case 11:
+                                    $typePayment = 'OTRO';
+                                break;
+                                case 12:
+                                    $typePayment = 'GLOVO';
+                                break;
+                                case 13:
+                                    $typePayment = 'RAPPI';
+                                break;
+                                case 14:
+                                    $typePayment = 'VENDEMAS';
+                                break;
+                                case 15:
+                                    $typePayment = 'LUKITA';
+                                break;
+                                case 16:
+                                    $typePayment = 'YAPE';
+                                break;
+                                case 17:
+                                    $typePayment = 'TUNKI';
+                                break;
+                                case 18:
+                                    $typePayment = 'AMERICAN EXPRESS';
+                                break;
+                                case 19:
+                                    $typePayment = 'PLIM';
+                                break;
+                                default:
+                                    $typePayment = '-';
+                                break;
+                            }
+                        }
+                    @endphp
+                    <tr class="text-center">
+                        <td class="text-center">{{ $count }}</td>
+                        <td>{{ $sale->data_client['lastnames'] }}</td>
+                        <td>{{ $typeDocument }}</td>
+                        <td>{{ $sale->ticket }}</td>
+                        <td>S/. {{ $sale->amount }}</td>
+                        <td>S/. {{ $sale->sub_total }}</td>
+                        <td>S/. {{ $sale->taxes }}</td>
+                        <td>{{ $typePayment }}</td>
+                        <td class="td-actions text-center">
+                            <button onClick="editProductModal()" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                                <i class="tim-icons icon-pencil"></i>
+                            </button>
+                            <button onClick="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                                <i class="tim-icons icon-simple-remove"></i>
+                            </button>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>

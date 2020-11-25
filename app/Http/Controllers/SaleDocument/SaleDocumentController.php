@@ -16,13 +16,19 @@ class SaleDocumentController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $jsonResponse = new \stdClass();
         $utils = new UtilsLogic();
-        $jsonResponse->user = $user;
-        $jsonResponse->products = $utils->getProductForSale();
-        $jsonResponse->tittle = 'Nueva Venta';
-        return view('sales.sale-document', compact('jsonResponse', $jsonResponse));
+        $user = Auth::user();
+        if (!is_null($user)) {
+            $jsonResponse = new \stdClass();
+            $jsonResponse->companyObject = $utils->getCompanyById($user->com_companies_id);
+            $jsonResponse->user = $user;
+            $jsonResponse->products = $utils->getProductForSale();
+            $jsonResponse->tittle = 'Nueva Venta';
+            $view = view('sales.sale-document', compact('jsonResponse', $jsonResponse));
+        } else {
+            $view = view('errors.404');
+        }
+        return $view;
     }
     public function createSales(Request $request)
     {

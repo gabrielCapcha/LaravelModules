@@ -3,6 +3,7 @@
 <section class="content">
     <div class="row">
         <input type="hidden" id="arrayProducts" value="{{ json_encode($jsonResponse->products) }}">
+        <input type="hidden" id="companyData" value="{{ json_encode($jsonResponse->companyObject) }}">
         <div class="col-8">
             <div style="background-color: #343a40; height: 780px">
                 <div style="padding: 30px">
@@ -76,17 +77,21 @@
             </div>
             <div class="row" style="padding: 10px;">
                 <div class="col-6">
-                    <a href="#" style="width:100%" class="btn btn-default">REPORTE DE VENTAS</a>
+                    <a href="#" style="width:100%" class="btn btn-default">GENERAR TICKET</a>
                 </div>
                 <div class="col-6">
                     <a href="new-sale" style="width:100%" class="btn btn-primary">NUEVA VENTA</a>
                 </div>
-                <div class="col-6">
-                    <a href="#" style="width:100%" class="btn btn-default">GENERAR TICKET</a>
+                @if ($jsonResponse->companyObject['flag_report'] == true)
+                <div id="reportSales">
+                    <a href="reports" style="width:100%" class="btn btn-default">REPORTE DE VENTAS</a>
                 </div>
-                <div class="col-6">
+                @endif
+                @if ($jsonResponse->companyObject['flag_a4_document'] == true)
+                <div id="pdfA4">
                     <a href="#" style="width:100%" class="btn btn-default">GENERAR PDF-A4</a>
                 </div>
+                @endif
                 <div class="col-8" style="padding-top: 10px">
                     <input type="text" id="sendSaleEmailAddress" class="form-control" style="width:100%; color: black"/>
                 </div>
