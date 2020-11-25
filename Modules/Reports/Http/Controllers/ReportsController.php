@@ -5,6 +5,7 @@ namespace Modules\Reports\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Auth;
 
 class ReportsController extends Controller
 {
@@ -14,7 +15,16 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        return view('reports::index');
+        $user = Auth::user();
+        if (!is_null($user)) {
+            $jsonResponse = new \stdClass();
+            $jsonResponse->user = $user;
+            $jsonResponse->tittle = "Reporte de ventas";
+            return view('reports::SaleDocumentReport.sale-document-report', compact('jsonResponse', $jsonResponse));
+        } else {
+            return view('error.404');
+        }
+        
     }
 
     /**
