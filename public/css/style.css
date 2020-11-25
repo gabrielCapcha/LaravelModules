@@ -1,0 +1,320 @@
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  /* payment buttons */
+  .payment-1-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_efectivo_coxhdpi.png');
+  }
+  .payment-1-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_efectivo_nexhdpi.png');
+  }
+
+  .payment-2-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_visa_coxhdpi.png');
+  }
+  .payment-2-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_visa_nexhdpi.png');
+  }
+
+  .payment-3-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_mastercard_coxhdpi.png');
+  }
+  .payment-3-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_mastercard_nexhdpi.png');
+  }
+
+  .payment-6-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_tarjeta_coxhdpi.png');
+  }
+  .payment-6-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_tarjeta_nexhdpi.png');
+  }
+
+  .payment-8-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_credito_coxhdpi.png');
+  }
+  .payment-8-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_credito_nexhdpi.png');
+  }
+
+  .payment-9-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_letras_coxhdpi.png');
+  }
+  .payment-9-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_letras_nexhdpi.png');
+  }
+
+  /* NEWS */
+
+  .payment-10-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_izipay_on.svg');
+  }
+  .payment-10-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_izipay_off.svg');
+  }
+
+  .payment-11-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_ubereats_on.svg');
+  }
+  .payment-11-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_ubereats_off.svg');
+  }
+
+  .payment-12-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_glovo_on.svg');
+  }
+  .payment-12-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_glovo_off.svg');
+  }
+
+  .payment-13-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_rappi_on.svg');
+  }
+  .payment-13-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_rappi_off.svg');
+  }
+
+  .payment-14-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_vendemas_on.svg');
+  }
+  .payment-14-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/ic_vendemas_off.svg');
+  }
+
+  .payment-15-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_lukita_coxhdpi.png');
+  }
+  .payment-15-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_lukita_nexhdpi.png');
+  }
+
+  .payment-16-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_yape_coxhdpi.png');
+  }
+  .payment-16-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_yape_nexhdpi.png');
+  }
+
+  .payment-17-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_tunki_coxhdpi.png');
+  }
+  .payment-17-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_tunki_nexhdpi.png');
+  }
+
+  .payment-18-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_american_express_coxhdpi.png');
+  }
+  .payment-18-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_american_express_nexhdpi.png');
+  }
+
+  .payment-19-selected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_plin_coxhdpi.png');
+  }
+  .payment-19-unselected {
+    width: 45px;
+    height: 35px;
+    cursor: pointer;
+    content : url('../img/payment-buttons/bo_plin_nexhdpi.png');
+  }
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  #notfound {
+    position: relative;
+    height: 100vh;
+  }
+  
+  #notfound .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  
+  .notfound {
+    max-width: 710px;
+    width: 100%;
+    padding-left: 190px;
+    line-height: 1.4;
+  }
+  
+  .notfound .notfound-404 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .notfound .notfound-404 h1 {
+    font-family: 'Passion One', cursive;
+    color: #00b5c3;
+    font-size: 150px;
+    letter-spacing: 15.5px;
+    margin: 0px;
+    font-weight: 900;
+    position: absolute;
+    white-space: nowrap;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  
+  .notfound h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #292929;
+    font-size: 28px;
+      font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-top: 0;
+  }
+  
+  .notfound p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .notfound a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #fff;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 40px;
+    color: #292929;
+    font-weight: 700;
+    -webkit-box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.3);
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .notfound a:hover {
+    color: #fff;
+    background-color: #00b5c3;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .notfound {
+      text-align: center;
+    }
+    .notfound .notfound-404 {
+      position: relative;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .notfound {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  
