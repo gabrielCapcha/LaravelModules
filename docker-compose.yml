@@ -1,11 +1,11 @@
 version: '3.7'
 services:
-  adminCoiffure:
+  laravelModules:
       image: webdevops/php-nginx:7.3
       # restart: always
       ports:
         - 8020:80
       volumes:
-        - C:\Users\Gabriel\Desktop\Develop\admin:/app:rw
+        - C:\Users\ASUS\Desktop\LaravelModules:/app:rw
       environment:
         - WEB_DOCUMENT_ROOT=/app/public
