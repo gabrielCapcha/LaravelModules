@@ -36,3 +36,4 @@ Route::delete('/sale-document/{id}', 'SaleDocument\Api\SaleDocumentApiController
 
 //plugins
 Route::get('/plugins', 'Plugins\Api\PluginsApiController@install');
+Route::delete('/plugins', 'Plugins\Api\PluginsApiController@uninstall');

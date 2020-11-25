@@ -14,10 +14,20 @@
 <script src="{{ asset('/black-dashboard/assets/demo/demo.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        installModule = function (url) {
+        var plugins = JSON.parse(document.getElementById('plugins').value);
+        var user = JSON.parse(document.getElementById('user').value);
+        var pluginSelected = '';
+        installModule = function (id) {
+            plugins.forEach(element => {
+                if (element.id == id) {
+                    pluginSelected = element;
+                }
+            });
+            pluginSelected.companyId = user.com_companies_id;
             $.ajax({
                 method: "GET",
-                url: "/api/plugins?url=" . url,
+                url: "/api/plugins",
+                data: pluginSelected,
                 statusCode: {
                     400: function() {
                         button.disabled = false;
@@ -26,6 +36,28 @@
                 }
             }).done(function(response) {
                 alert("Instalación exitosa");
+                location.reload();
+            });
+        }
+        unistallModule = function (id) {
+            plugins.forEach(element => {
+                if (element.id == id) {
+                    pluginSelected = element;
+                }
+            });
+            pluginSelected.companyId = user.com_companies_id;
+            $.ajax({
+                method: "DELETE",
+                url: "/api/plugins",
+                data: pluginSelected,
+                statusCode: {
+                    400: function() {
+                        button.disabled = false;
+                        alert("Hubo un error al momento de instalar. Intentelo de nuevo");
+                    }
+                }
+            }).done(function(response) {
+                alert("El plugin se eliminó");
                 location.reload();
             });
         }

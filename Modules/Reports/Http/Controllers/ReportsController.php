@@ -5,6 +5,7 @@ namespace Modules\Reports\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use App\Entity\Utils\UtilsLogic;
 use Modules\Reports\Entities\ReportsLogic;
 use Auth;
 
@@ -19,8 +20,10 @@ class ReportsController extends Controller
         $user = Auth::user();
         if (!is_null($user)) {
             $be = new ReportsLogic();
+            $utils = new UtilsLogic();
             $jsonResponse = new \stdClass();
             $jsonResponse->user = $user;
+            $jsonResponse->companyObject = $utils->getCompanyById($user->com_companies_id);
             $jsonResponse->tittle = "Reporte de ventas";
             $jsonResponse->sales = $be->getSaleDocumentList();
             return view('reports::SaleDocumentReport.sale-document-report', compact('jsonResponse', $jsonResponse));

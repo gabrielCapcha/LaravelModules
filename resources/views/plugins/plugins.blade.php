@@ -2,6 +2,8 @@
 @section('main-content')
 <section class="content">
     <div class="row">
+    <input id="plugins" type="hidden" value="{{ $jsonResponse->plugins }}">
+    <input id="user" type="hidden" value="{{ Auth::user() }}">
     <div style="padding: 100px">
         <table class="table">
             <thead>
@@ -25,10 +27,10 @@
                     <td>{{ $plugin->name }}</td>
                     <td>{{ $plugin->description }}</td>
                     <td class="td-actions text-center">
-                        <button onClick="editProductModal({{ $plugin->url }})" type="button" rel="tooltip" class="btn btn-primary btn-sm btn-icon">
+                        <button onClick="installModule({{ $plugin->id }})" type="button" rel="tooltip" class="btn btn-primary btn-sm btn-icon">
                             <i class="tim-icons icon-cloud-download-93"></i>
                         </button>
-                        <button onClick="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                        <button onClick="unistallModule({{ $plugin->id }})" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
                             <i class="tim-icons icon-simple-remove"></i>
                         </button>
                     </td>

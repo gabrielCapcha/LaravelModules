@@ -18,7 +18,7 @@
     </div>
     <!--   Core JS Files   -->
     @section('scripts')
-        @include('product.partials.scripts-product')
+        @include('Reports::SaleDocumentReport.partials.scripts-sale-document-report')
     @show  
 </body>
 </html>
