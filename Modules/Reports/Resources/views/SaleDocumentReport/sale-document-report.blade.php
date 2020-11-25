@@ -34,7 +34,74 @@
                     } else {
                         $typeDocument = 'FACTURA';
                     }
+                  
+                  
+                    if(!is_null($sale->sal_type_document_id)){
+                        switch($sale->sal_type_document_id){
+                            case 1:
+                                $typeDocument = 'EFECTIVO';
+                            break;
+                            case 2:
+                                $typeDocument = 'VISA';
+                            break;
+                            case 3:
+                                $typeDocument = 'MASTERCARD';
+                            break;
+                            case 4:
+                                $typeDocument = 'PAGO A CUOTAS';
+                            break;
+                            case 5:
+                                $typeDocument = 'PAGO MIXTO';
+                            break;
+                            case 6:
+                                $typeDocument = 'DEPOSITO/TRANSFERENCIA';
+                            break;
+                            case 7:
+                                $typeDocument = 'CHEQUE FINANCIERO';
+                            break;
+                            case 8:
+                                $typeDocument = 'CREDITO';
+                            break;
+                            case 9:
+                                $typeDocument = 'LETRA';
+                            break;
+                            case 10:
+                                $typeDocument = 'IZIPAY';
+                            break;
+                            case 11:
+                                $typeDocument = 'OTRO';
+                            break;
+                            case 12:
+                                $typeDocument = 'GLOVO';
+                            break;
+                            case 13:
+                                $typeDocument = 'RAPPI';
+                            break;
+                            case 14:
+                                $typeDocument = 'VENDEMAS';
+                            break;
+                            case 15:
+                                $typeDocument = 'LUKITA';
+                            break;
+                            case 16:
+                                $typeDocument = 'YAPE';
+                            break;
+                            case 17:
+                                $typeDocument = 'TUNKI';
+                            break;
+                            case 18:
+                                $typeDocument = 'AMERICAN EXPRESS';
+                            break;
+                            case 19:
+                                $typeDocument = 'PLIM';
+                            break;
+                        }
+                        
+
                 @endphp
+
+                
+                
                 <tr class="text-center">
                     <td class="text-center">{{ $count }}</td>
                     <td>{{ $sale->data_client['lastnames'] }}</td>
@@ -43,7 +110,7 @@
                     <td>S/. {{ $sale->amount }}</td>
                     <td>S/. {{ $sale->sub_total }}</td>
                     <td>S/. {{ $sale->taxes }}</td>
-                    <td>S/. {{ $sale->sal_type_payment }}</td>
+                    <td>S/. {{ $type_payment }}</td>
                     <td class="td-actions text-center">
                         <button onClick="editProductModal()" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                             <i class="tim-icons icon-pencil"></i>
