@@ -68,102 +68,45 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="createProductModal" tabindex="-1" role="dialog" aria-labelledby="createProductModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div id="successSale" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" style="color: black">Agregar nuevo producto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="tim-icons icon-simple-remove"></i>
-                </button>
+                <h5 class="modal-title" style="color: black; font-size: 18px">Venta exitosa</h5>
             </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="productName">NOMBRE</label>
-                        <input class="form-control" type="text" id="productName" name="productName" placeholder="Ingrese nombre del producto">
-                        <br>
-                        <label for="productName">PRECIO</label>
-                        <input class="form-control" type="number" id="productPrice" name="productPrice" placeholder="Ingrese el precio del producto">
-                    </div>
-                    <div class="col-6">
-                        <label for="productName">CÓDIGO</label>
-                        <input class="form-control" type="text" id="productCode" name="productCode" placeholder="Ingrese código del producto">
-                        <br>
-                        <label for="productName">CATEGORÍA</label>
-                        <select class="form-control" name="" id="productCategory">
-                            <option value="0">Producto</option>
-                            <option value="1">Servicio</option>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <textarea class="form-control" id="productDescription" cols="30" rows="10" placeholder="Ingrese una descripción"></textarea>
-                    </div>
+            <div class="row" style="padding: 10px;">
+                <div class="col-6">
+                    <a href="#" style="width:100%" class="btn btn-default">REPORTE DE VENTAS</a>
+                </div>
+                <div class="col-6">
+                    <a href="new-sale" style="width:100%" class="btn btn-primary">NUEVA VENTA</a>
+                </div>
+                <div class="col-6">
+                    <a href="#" style="width:100%" class="btn btn-default">GENERAR TICKET</a>
+                </div>
+                <div class="col-6">
+                    <a href="#" style="width:100%" class="btn btn-default">GENERAR PDF-A4</a>
+                </div>
+                <div class="col-8" style="padding-top: 10px">
+                    <input type="text" id="sendSaleEmailAddress" class="form-control" style="width:100%; color: black"/>
+                </div>
+                <div class="col-4">
+                    <a href="#" style="width:100%" class="btn btn-default">ENVIAR POR CORREO</a>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" data-dismiss="modal" onClick="createNewProduct()" class="btn btn-primary">Guardar</button>
             </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="editProductModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div id="modal-on-load" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" style="color: black">Editar producto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="tim-icons icon-simple-remove"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="productName">NOMBRE</label>
-                        <input class="form-control" type="text" id="editProductName" placeholder="Ingrese nombre del producto">
-                        <br>
-                        <label for="productName">PRECIO</label>
-                        <input class="form-control" type="number" id="editProductPrice" placeholder="Ingrese el precio del producto">
-                    </div>
-                    <div class="col-6">
-                        <label for="productName">CÓDIGO</label>
-                        <input class="form-control" type="text" id="editProductCode"  placeholder="Ingrese código del producto">
-                        <br>
-                        <label for="productName">CATEGORÍA</label>
-                        <select class="form-control" id="editProductCategory">
-                            <option value="0">Producto</option>
-                            <option value="1">Servicio</option>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <textarea class="form-control" id="editProductDescription" cols="30" rows="10" placeholder="Ingrese una descripción"></textarea>
-                    </div>
+                <div class="modal-header">
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" onClick="saveProduct()" data-dismiss="modal" class="btn btn-primary">Guardar</button>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="deleteProductModal" tabindex="-1" role="dialog" aria-labelledby="deleteProductModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" style="color: black">Eliminar producto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="tim-icons icon-simple-remove"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-               ¿Estás seguro que deseas eliminar este producto?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </div>
+                <div class="modal-body" style="color: black">
+                    Procesando venta...
+                </div>
             </div>
         </div>
     </div>

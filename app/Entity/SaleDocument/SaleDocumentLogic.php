@@ -52,10 +52,16 @@ class SaleDocumentLogic
             foreach ($params['items'] as $key => $value) {
                 $item = null;
                 $value['sal_sale_documents_id'] = $object->id;
-                $item = Product::find($value['war_products_id']);
+                $item = Product::find($value['product_id']);
                 if (!is_null($item)) {
-                    if ($value['quantity'] < $item->stock) {
-                        $item->stock =  $item->stock - $value['quantity'];
+                    if (isset($value['quantity'])) {
+                        if ($value['quantity'] < $item->stock) {
+                            $item->stock =  $item->stock - $value['quantity'];
+                            $item->save();
+                        }
+                    } else {
+                        $value['quantity'] = 1;
+                        $item->stock =  $item->stock - 1;
                         $item->save();
                     }
                 }

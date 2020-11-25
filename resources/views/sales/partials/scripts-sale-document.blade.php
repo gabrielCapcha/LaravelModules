@@ -19,7 +19,7 @@
     data.client = {};
     data.dataClient = {};
     data.products = [];
-    data.typePayment = {};
+    data.typePayment = 1;
     var selectedProducts = [];
     var totalAmount = 0;
     var typePaymentNames = {
@@ -46,13 +46,14 @@
     }
 
     finishNewSale = function (){
+        
         typeDocument = document.getElementById("type-document").value;
         selectedProducts.forEach(element => {
             totalAmount = parseInt(totalAmount) + parseInt(element.price);
         });
         var dataSale = {
             "sal_type_document_id": typeDocument,
-            "sal_type_payment": data.typePayment.name,
+            "sal_type_payment": data.typePayment,
             "amount": totalAmount,
             "sal_series": 1,
             "discount": 0,
@@ -76,8 +77,8 @@
                 }
             }
         }).done(function(response) {
-            alert("Cliente encontrado.");
-            data.dataClient = response;
+            $('#successSale').modal({ backdrop: 'static', keyboard: false });
+            /* $('#successSale').modal({ backdrop: 'static', keyboard: false }); */
         });
         console.log(dataSale)
     }
@@ -118,6 +119,7 @@
     }
 
     typePayments = function(id) {
+            data.typePayment = id;
             var selectedPayment = typePaymentNames[id];
             var paymentButton = document.getElementById("typePayment_" + id);
             for (let index = 1; index < 20; index++) {
@@ -153,7 +155,13 @@
                         '</button></td>';
         tr.innerHTML = trinnerHTML_;
         tBody.insertBefore(tr, tBody.firstChild);
-        selectedProducts.push(product);
+        var addProduct = {
+            "product_id" : product.id,
+            "price": product.price,
+            "name": product.name,
+            "category": product.category
+        }
+        selectedProducts.push(addProduct);
         console.log(selectedProducts);
     }
 

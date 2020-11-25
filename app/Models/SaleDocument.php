@@ -21,7 +21,7 @@ class SaleDocument extends Model {
 		'id', 'correlative', 'serie', 'amount',
 		'data_client', 'sal_type_document_id', 'ticket',
 		'taxes', 'sub_total','sal_series',
-		'sal_type_payment',
+		'sal_type_payment_id',
 		//Audit
 		'flag_active', 'updated_at', 'deleted_at','created_at'
 	];

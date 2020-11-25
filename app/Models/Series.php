@@ -17,7 +17,7 @@ class Series extends Model {
 	 */
 	protected $fillable = [
 		//Table Rows
-		'id', 'com_subsidiaries_id', 'serie', 'number',
+		'id', 'serie', 'number',
 		//Audit
 		'flag_active', 'updated_at', 'deleted_at','created_at'
 	];
