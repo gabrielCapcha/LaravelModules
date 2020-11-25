@@ -10,17 +10,13 @@
             <thead>
                 <tr class="text-center">
                     <th class="text-center">#</th>
-                    <th>Serie</th>
                     <th>Cliente</th>
                     <th>Tipo de comprobante</th>
                     <th>Ticket</th>
-                    <th>IGV</th>
-                    <th>Sub total</th>
                     <th>Total</th>
-                    <th>Serie</th>
+                    <th>Sub total</th>
+                    <th>IGV</th>
                     <th>Tipo de pago</th>
-                    
-                    <th>Estado</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -31,21 +27,25 @@
                 @foreach($jsonResponse->sales as $sale)
                 @php
                     $count++;
+                    if ($sale->sal_type_document_id == 0) {
+                        $typeDocument = 'PRECUENTA';
+                    } elseif ($sale->sal_type_document_id == 1) {
+                        $typeDocument = 'BOLETA';
+                    } else {
+                        $typeDocument = 'FACTURA';
+                    }
                 @endphp
                 <tr class="text-center">
                     <td class="text-center">{{ $count }}</td>
-                    <td>{{ $sale->serie }}</td>
-                    <td>{{ $sale->data_client }}</td>
-                    <td>{{ $sale->sal_type_docuent_id }}</td>
+                    <td>{{ $sale->data_client['lastnames'] }}</td>
+                    <td>{{ $typeDocument }}</td>
                     <td>{{ $sale->ticket }}</td>
-                    <td>S/. {{ $sale->taxes }}</td>
-                    <td>S/. {{ $sale->sub_total }}</td>
                     <td>S/. {{ $sale->amount }}</td>
-                    <td>S/. {{ $sale->sal_series }}</td>
+                    <td>S/. {{ $sale->sub_total }}</td>
+                    <td>S/. {{ $sale->taxes }}</td>
                     <td>S/. {{ $sale->sal_type_payment }}</td>
-                    
                     <td class="td-actions text-center">
-                        <button onClick="editProductModal({{ $product->id }})" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                        <button onClick="editProductModal()" type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                             <i class="tim-icons icon-pencil"></i>
                         </button>
                         <button onClick="" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
